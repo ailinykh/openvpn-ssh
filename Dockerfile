@@ -9,10 +9,9 @@ RUN apk add --update --no-cache openssh openrc && \
 
 RUN rc-update add sshd
 
-ADD https://github.com/ailinykh.keys /root/.ssh/authorized_keys
+# ADD https://github.com/ailinykh.keys /root/.ssh/authorized_keys
 
 ADD entrypoint.sh /root/entrypoint.sh
 RUN chmod a+x /root/entrypoint.sh
 
-ENTRYPOINT ["/root/entrypoint.sh"]
-# CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/root/entrypoint.sh"]
