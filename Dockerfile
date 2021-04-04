@@ -13,5 +13,6 @@ RUN rc-update add sshd
 
 ADD entrypoint.sh /root/entrypoint.sh
 RUN chmod a+x /root/entrypoint.sh
+RUN echo 'root:Docker!' | chpasswd
 
 CMD ["/root/entrypoint.sh"]
